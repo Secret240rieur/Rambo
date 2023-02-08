@@ -12,15 +12,18 @@ public class SetVol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Slider>().value = defaultVol;
-        SetVolume(defaultVol);
+
+        
+      GetComponent<Slider>().value=PlayerPrefs.GetFloat("vol",defaultVol);
+
+            SetVolume(GetComponent<Slider>().value);
 
     }
 
     public void SetVolume(float vol)
     {
         AudioListener.volume = vol;
-
+        PlayerPrefs.SetFloat("vol", vol);
     }
 
     // Update is called once per frame
