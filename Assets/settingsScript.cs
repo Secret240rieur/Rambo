@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class settingsScript : MonoBehaviour
 {
@@ -32,4 +33,10 @@ public class settingsScript : MonoBehaviour
         if (menuPanel != null)
             menuPanel.SetActive(true);
     }
+
+    public void TitleScreen ()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

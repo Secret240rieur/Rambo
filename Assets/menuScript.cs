@@ -8,10 +8,10 @@ public class menuScript : MonoBehaviour
 {
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject settingsPanel;
-
+    [SerializeField] SetVol setVol;
     private void Awake()
     {
-        settingsPanel.SetActive(false);
+        setVol.Init();
     }
 
 

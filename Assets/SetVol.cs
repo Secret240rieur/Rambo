@@ -7,16 +7,13 @@ using UnityEngine.UI;
 public class SetVol : MonoBehaviour
 {
     const float defaultVol = 0.3f;
-
+    [SerializeField] Slider volSlider;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+      volSlider.value=PlayerPrefs.GetFloat("vol",defaultVol);
 
-        
-      GetComponent<Slider>().value=PlayerPrefs.GetFloat("vol",defaultVol);
-
-            SetVolume(GetComponent<Slider>().value);
 
     }
 
@@ -24,6 +21,7 @@ public class SetVol : MonoBehaviour
     {
         AudioListener.volume = vol;
         PlayerPrefs.SetFloat("vol", vol);
+        Debug.Log(vol);
     }
 
     // Update is called once per frame
@@ -31,4 +29,10 @@ public class SetVol : MonoBehaviour
     {
         
     }
+
+    public void Init()
+    {
+        SetVolume(volSlider.value);
+    }
+
 }
