@@ -9,6 +9,8 @@ public class menuScript : MonoBehaviour
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] SetVol setVol;
+    [SerializeField] SceneData sceneData;
+
     private void Awake()
     {
         setVol.Init();
@@ -35,7 +37,7 @@ public class menuScript : MonoBehaviour
 
    public void startGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneData.name);
     }
 
     public void quit()

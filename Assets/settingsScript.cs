@@ -7,22 +7,11 @@ public class settingsScript : MonoBehaviour
 {
     //[SerializeField] GameObject settingsPanel;
     GameObject menuPanel;
-
+    [SerializeField] SceneData sceneData;
 
     private void Awake()
     {
         menuPanel = GameObject.Find("Menu_Panel");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void HideSettings()
@@ -36,7 +25,7 @@ public class settingsScript : MonoBehaviour
 
     public void TitleScreen ()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(sceneData.name);
     }
 
 }

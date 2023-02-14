@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 195921960}
   - component: {fileID: 195921964}
   - component: {fileID: 195921965}
+  - component: {fileID: 195921966}
   m_Layer: 5
   m_Name: TitleScreen_Canvas
   m_TagString: Untagged
@@ -472,6 +473,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 1207630400}
   settingsPanel: {fileID: 1059333253}
+--- !u!114 &195921966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195921959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4a7427ff84d5c4fab0f610629ce635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volSlider: {fileID: 1625989629}
 --- !u!1 &421476645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,7 +1414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 1207630400}
   settingsPanel: {fileID: 1059333253}
-  setVol: {fileID: 1625989627}
+  setVol: {fileID: 195921966}
+  sceneData: {fileID: 11400000, guid: a81c2318496631840b10071edbfee0d5, type: 2}
 --- !u!1 &1281757524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,15 +1550,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281757524}
   m_CullTransparentMesh: 1
---- !u!114 &1625989627 stripped
+--- !u!114 &1625989629 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4368953837840893581, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4368953837840893582, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
   m_PrefabInstance: {fileID: 4368953837774644544}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4a7427ff84d5c4fab0f610629ce635, type: 3}
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1916757701
@@ -1911,14 +1926,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4368953838105696328, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368953839023933925, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4368953837840893582, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 195921966}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
