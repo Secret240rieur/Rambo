@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class PlayerBaseState 
 {
-    public abstract void EnterState(PlayerStateManager player);
+    public abstract void EnterState(PlayerStateManager player,Transform LaunchOffset, bool isLeft);
 
 }
