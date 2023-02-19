@@ -196,8 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  LaunchOffset: {fileID: 8028553424991820856}
+  launchOffset: {fileID: 0}
   superState: 0
+  isLeft: 0
 --- !u!95 &8028553426383142093
 Animator:
   serializedVersion: 5
@@ -230,3 +231,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf55509d46d5ca4c8487609f798fe3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSuper: 0
+  counter: 0

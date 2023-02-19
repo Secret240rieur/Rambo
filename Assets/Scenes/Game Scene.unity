@@ -41265,6 +41265,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectilePool
       objectReference: {fileID: 0}
+    - target: {fileID: 5531378854493056881, guid: 88d0635fc5c1e7c42910d229363f6021, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531378854493056881, guid: 88d0635fc5c1e7c42910d229363f6021, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

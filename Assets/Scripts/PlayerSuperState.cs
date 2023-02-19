@@ -14,16 +14,16 @@ public class PlayerSuperState : PlayerBaseState
         if (isLeft)
         {
             launchOffset.localPosition = new Vector3(-0.05f, 0.0012f, 0f);
-            ProjectileObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
-            ProjectileObject1.transform.rotation = Quaternion.Euler(0, 0, 160f);
-            ProjectileObject2.transform.rotation = Quaternion.Euler(0, 0, -160f);
+            ProjectileObject.transform.rotation = Quaternion.Euler(0, 0, -90f);
+            ProjectileObject1.transform.rotation = Quaternion.Euler(0, 0, -70f);
+            ProjectileObject2.transform.rotation = Quaternion.Euler(0, 0, -110f);
         }
         else
         {
             launchOffset.localPosition = new Vector3(0.0429f, 0.0012f, 0f);
-            ProjectileObject.transform.rotation = Quaternion.identity;
-            ProjectileObject1.transform.rotation = Quaternion.Euler(0, 0, 20f);
-            ProjectileObject2.transform.rotation = Quaternion.Euler(0, 0, -20f);
+            ProjectileObject.transform.rotation = Quaternion.Euler(0, 0, 90f);
+            ProjectileObject1.transform.rotation = Quaternion.Euler(0, 0, 70f);
+            ProjectileObject2.transform.rotation = Quaternion.Euler(0, 0, 110f);
         }
 
 

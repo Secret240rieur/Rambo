@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] int pointsLeft = 10;
+
     void Start() => StartCoroutine(SpawnCoroutine());
+
+    public virtual void DamageSpawner()
+    {
+        if (--pointsLeft <= 0)
+            gameObject.SetActive(false);
+    }
+
 
     IEnumerator SpawnCoroutine()
     {

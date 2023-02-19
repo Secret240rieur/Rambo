@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 896138935819607806}
   - component: {fileID: 4186618542853127187}
   - component: {fileID: 6989600662988617077}
+  - component: {fileID: 430532855568331949}
   m_Layer: 0
   m_Name: WeakEnemy
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &896138935819607806
 SpriteRenderer:
@@ -148,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &430532855568331949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818826509930625917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5fbca2dbc0d5d4586d86e7a494425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsLeft: 10
+  spawner: {fileID: 1385310284939758816, guid: ef6d6c6c3d376d045b61265e1cae74c4, type: 3}
+  countPoints: 1
+  hp: 5

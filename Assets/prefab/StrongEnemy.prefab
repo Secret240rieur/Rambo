@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 286616463802387286}
   - component: {fileID: 7494146934428756206}
   - component: {fileID: 3476712476930788409}
+  - component: {fileID: -4427127176824007800}
   m_Layer: 0
   m_Name: StrongEnemy
   m_TagString: Untagged
@@ -148,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-4427127176824007800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768302986794174975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5fbca2dbc0d5d4586d86e7a494425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsLeft: 10
+  spawner: {fileID: 1385310284939758816, guid: ef6d6c6c3d376d045b61265e1cae74c4, type: 3}
+  countPoints: 1
+  hp: 10
