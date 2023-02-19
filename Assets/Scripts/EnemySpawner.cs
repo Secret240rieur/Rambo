@@ -12,9 +12,9 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                EnemyFactory.Instance.CreateWeakEnemy().transform.position = RandomPosition();
+                EnemyFactory.Instance.CreateWeakEnemy(this.gameObject.transform).transform.position = RandomPosition();
             }
-            EnemyFactory.Instance.CreateStrongEnemy().transform.position = RandomPosition();
+            EnemyFactory.Instance.CreateStrongEnemy(this.gameObject.transform).transform.position = RandomPosition();
             yield return new WaitForSeconds(5);
         }
     }

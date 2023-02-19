@@ -21,14 +21,14 @@ public class EnemyFactory : MonoBehaviour
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject gameObject = Instantiate(weakEnemy);
+            GameObject gameObject = Instantiate(weakEnemy,this.gameObject.transform);
             weakEnemies.Add(gameObject);
             gameObject.SetActive(false);
         }
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject gameObject = Instantiate(strongEnemy);
+            GameObject gameObject = Instantiate(strongEnemy, this.gameObject.transform);
             strongEnemies.Add(gameObject);
             gameObject.SetActive(false);
         }
@@ -36,13 +36,14 @@ public class EnemyFactory : MonoBehaviour
 
     }
 
-    public GameObject CreateWeakEnemy()
+    public GameObject CreateWeakEnemy(Transform parent)
     {
 
         for (int i = 0; i < weakEnemies.Count; i++)
         {
             if (!weakEnemies[i].activeInHierarchy)
             {
+                weakEnemies[i].transform.SetParent(parent);
                 weakEnemies[i].SetActive(true);
                 return weakEnemies[i];
             }
@@ -52,13 +53,14 @@ public class EnemyFactory : MonoBehaviour
 
     }
 
-    public GameObject CreateStrongEnemy()
+    public GameObject CreateStrongEnemy(Transform parent)
     {
 
         for (int i = 0; i < strongEnemies.Count; i++)
         {
             if (!strongEnemies[i].activeInHierarchy)
             {
+                strongEnemies[i].transform.SetParent(parent);
                 strongEnemies[i].SetActive(true);
                 return strongEnemies[i];
             }
