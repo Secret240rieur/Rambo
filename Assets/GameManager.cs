@@ -6,11 +6,15 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] List<EnemySpawner> enemySpawnerList=new List<EnemySpawner>();
     [SerializeField] bool isActive = true;
-    
+
+    public static GameManager Instance { get; private set; }
+
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Instance = this;
+
     }
 
     // Update is called once per frame
