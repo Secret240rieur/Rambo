@@ -41410,6 +41410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+  launchOffset: {fileID: 0}
+  superState: 0
+  isLeft: 0
 --- !u!95 &2008058165
 Animator:
   serializedVersion: 5

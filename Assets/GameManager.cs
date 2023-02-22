@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] List<EnemySpawner> enemySpawnerList=new List<EnemySpawner>();
-    [SerializeField] bool isActive = true;
+    [SerializeField] bool isActive = true; 
+    [SerializeField] SceneData sceneData;
+
 
     public static GameManager Instance { get; private set; }
 
@@ -33,6 +36,13 @@ public class GameManager : MonoBehaviour
                 isActive = true;
                 break;
             }
+        }
+
+        if(!isActive)
+        {
+            if (sceneData)
+                SceneManager.LoadScene(sceneData.name);
+            else Debug.Log("win");
         }
 
     }
