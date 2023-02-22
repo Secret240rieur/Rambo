@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15205613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15205615}
+  - component: {fileID: 15205614}
+  m_Layer: 0
+  m_Name: ---GameManager---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &15205614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15205613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b624cb4cc92d564099f44653884b9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnerList:
+  - {fileID: 458698476}
+  - {fileID: 1315709225}
+  isActive: 1
+--- !u!4 &15205615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15205613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13908456, y: -0.059096597, z: 0.13332531}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44685682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2477,17 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &458698476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1385310284939758816, guid: ef6d6c6c3d376d045b61265e1cae74c4, type: 3}
+  m_PrefabInstance: {fileID: 3758966433679239040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7a71c68dfff584e867fefafd983191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &496532819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7855,6 +7914,17 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1315709225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1385310284939758816, guid: ef6d6c6c3d376d045b61265e1cae74c4, type: 3}
+  m_PrefabInstance: {fileID: 1671547641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7a71c68dfff584e867fefafd983191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1405365698
 PrefabInstance:
   m_ObjectHideFlags: 0
