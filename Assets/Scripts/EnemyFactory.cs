@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFactory : MonoBehaviour
+public class EnemyFactory : AbstractEnemyFactory
 {
     public static EnemyFactory instance;
 
@@ -38,7 +38,7 @@ public class EnemyFactory : MonoBehaviour
 
     }
 
-    public GameObject CreateWeakEnemy(Transform parent)
+    public override GameObject CreateWeakEnemy(Transform parent)
     {
 
         for (int i = 0; i < weakEnemies.Count; i++)
@@ -55,7 +55,7 @@ public class EnemyFactory : MonoBehaviour
 
     }
 
-    public GameObject CreateStrongEnemy(Transform parent)
+    public override GameObject CreateStrongEnemy(Transform parent)
     {
 
         for (int i = 0; i < strongEnemies.Count; i++)

@@ -16,6 +16,7 @@ public class PlayerStateManager : MonoBehaviour
     private float elapsedTime = 0f;
     private float interval = .5f;
 
+
     public int Counter { get => counter; set => counter = value; }
     public bool IsSuper { get => isSuper; set => isSuper = value; }
 

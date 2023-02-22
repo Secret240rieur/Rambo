@@ -21,7 +21,6 @@ public class SetVol : MonoBehaviour
     {
         AudioListener.volume = vol;
         PlayerPrefs.SetFloat("vol", vol);
-        Debug.Log(vol);
     }
 
     // Update is called once per frame
