@@ -28,4 +28,11 @@ public class settingsScript : MonoBehaviour
         SceneManager.LoadScene(sceneData.name);
     }
 
+
+    public void Retry()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
+
 }
