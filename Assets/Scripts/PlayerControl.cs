@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     public bool SuperState { get => superState; set => superState = value; }
     public Transform LaunchOffset { get => launchOffset; set => launchOffset = value; }
     public bool IsLeft { get => isLeft; set => isLeft = value; }
-
+    
     private void Start()
     {
         animator = GetComponent<Animator>();

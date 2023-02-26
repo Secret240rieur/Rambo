@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] List<EnemySpawner> enemySpawnerList=new List<EnemySpawner>();
     [SerializeField] bool isActive = true; 
     [SerializeField] SceneData sceneData;
+    [SerializeField] GameObject settingsPanel;
 
+
+    [Inject]
+    PlayerStateManager stateManager;
 
     public static GameManager Instance { get; private set; }
 
@@ -17,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        settingsPanel.SetActive(false);
 
     }
 
@@ -43,6 +49,18 @@ public class GameManager : MonoBehaviour
             if (sceneData)
                 SceneManager.LoadScene(sceneData.name);
             else Debug.Log("win");
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (settingsPanel.activeInHierarchy)
+                settingsPanel.SetActive(false);
+            else settingsPanel.SetActive(true);
+        }
+
+        if (stateManager.HP <= 0)
+        {
+            settingsPanel.SetActive(true);
         }
 
     }

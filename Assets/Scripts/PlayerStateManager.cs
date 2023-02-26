@@ -9,6 +9,8 @@ public class PlayerStateManager : MonoBehaviour
     PlayerBaseState currentState;
     public PlayerNormalState normalState = new PlayerNormalState();
     public PlayerSuperState superState = new PlayerSuperState();
+    [SerializeField] int hp = 100;
+
 
     Transform launchOffset;
     bool isLeft;
@@ -19,6 +21,15 @@ public class PlayerStateManager : MonoBehaviour
 
     public int Counter { get => counter; set => counter = value; }
     public bool IsSuper { get => isSuper; set => isSuper = value; }
+    public int HP { get => hp; set => hp = value; }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Weak Enemy") HP -= 10;
+        if (collision.gameObject.tag == "Strong Enemy") HP -= 40;
+    }
+
 
     // Start is called before the first frame update
     void Start()

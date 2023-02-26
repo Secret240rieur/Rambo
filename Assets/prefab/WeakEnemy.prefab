@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 430532855568331949}
   m_Layer: 0
   m_Name: WeakEnemy
-  m_TagString: Untagged
+  m_TagString: Weak Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsLeft: 10
-  spawner: {fileID: 1385310284939758816, guid: ef6d6c6c3d376d045b61265e1cae74c4, type: 3}
   countPoints: 1
   hp: 5

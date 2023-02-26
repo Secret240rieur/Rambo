@@ -24,14 +24,14 @@ public class EnemyFactory : AbstractEnemyFactory
             GameObject gameObject = Instantiate(weakEnemy,this.gameObject.transform);
             weakEnemies.Add(gameObject);
             gameObject.SetActive(false);
-            gameObject.tag = "Enemy";
+            gameObject.tag = "Weak Enemy";
         }
 
         for (int i = 0; i < poolSize; i++)
         {
             GameObject gameObject = Instantiate(strongEnemy, this.gameObject.transform);
             strongEnemies.Add(gameObject);
-            gameObject.tag = "Enemy";
+            gameObject.tag = "Strong Enemy";
             gameObject.SetActive(false);
         }
 

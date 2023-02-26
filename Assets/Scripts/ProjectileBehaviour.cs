@@ -11,11 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour
     [Inject]
     PlayerStateManager stateManager;
 
-    //[Inject]
-    //public void Construct(PlayerStateManager stateManager)
-    //{
-    //    this.stateManager = stateManager;
-    //}
+   
 
     private void Awake()
     {
@@ -25,7 +21,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Strong Enemy" || collision.tag == "Weak Enemy")
         {
             if (--collision.GetComponent<ProxyEnemy>().Hp >= 0)
             {
@@ -36,14 +32,6 @@ public class ProjectileBehaviour : MonoBehaviour
                 else
                     stateManager.Counter++;
 
-                //if (player.GetComponent<PlayerStateManager>().IsSuper)
-                //{
-                //    player.GetComponent<PlayerStateManager>().Counter--;
-                //}
-                //else
-                //{
-                //    player.GetComponent<PlayerStateManager>().Counter++;
-                //}
                 gameObject.SetActive(false);
             }
         }

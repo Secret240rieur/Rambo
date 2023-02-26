@@ -48,4 +48,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   isActive: 1
-  sceneData: {fileID: 0}
+  sceneData: {fileID: 11400000, guid: ec8bd060a67b4094b8652ac096114422, type: 2}
+  settingsPanel: {fileID: 4368953837621805509, guid: fe85224135ec50842ba5af0be1102e16, type: 3}

@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneData: {fileID: 11400000, guid: 499214a61a9ba304e82bc6ef87c7c9e8, type: 2}
+  GameScene1: {fileID: 0}
 --- !u!1 &4368953837657421695
 GameObject:
   m_ObjectHideFlags: 0

@@ -4983,6 +4983,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &890090465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1374577684052525778, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+  m_PrefabInstance: {fileID: 3437054934504365129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129611248
 GameObject:
   m_ObjectHideFlags: 0
@@ -41721,9 +41726,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
-      propertyPath: sceneData
+      propertyPath: settingsPanel
       value: 
-      objectReference: {fileID: 11400000, guid: ec8bd060a67b4094b8652ac096114422, type: 2}
+      objectReference: {fileID: 890090465}
     - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
       propertyPath: enemySpawnerList.Array.data[0]
       value: 

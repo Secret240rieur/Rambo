@@ -8,6 +8,8 @@ public class settingsScript : MonoBehaviour
     //[SerializeField] GameObject settingsPanel;
     GameObject menuPanel;
     [SerializeField] SceneData sceneData;
+    [SerializeField] SceneData GameScene1;
+
 
     private void Awake()
     {
@@ -33,6 +35,11 @@ public class settingsScript : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(GameScene1.name);
     }
 
 }
