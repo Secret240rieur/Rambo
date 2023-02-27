@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         settingsPanel.SetActive(false);
-        winPanel.SetActive(false);
 
     }
 
