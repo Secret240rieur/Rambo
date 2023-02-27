@@ -14,8 +14,9 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (collision.tag == "Strong Enemy" || collision.tag == "Weak Enemy")
         {
-            if (--collision.GetComponent<ProxyEnemy>().Hp >= 0)
+            if (collision.GetComponent<ProxyEnemy>().Hp > 0)
             {
+                collision.GetComponent<ProxyEnemy>().Hp--;
                 collision.GetComponent<EnemySpawner>().DamageSpawner();
 
                 if (stateManager.IsSuper)

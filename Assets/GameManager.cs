@@ -6,8 +6,8 @@ using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] List<EnemySpawner> enemySpawnerList=new List<EnemySpawner>();
-    [SerializeField] bool isActive = true; 
+    [SerializeField] List<EnemySpawner> enemySpawnerList = new List<EnemySpawner>();
+    [SerializeField] bool isActive = true;
     [SerializeField] SceneData sceneData;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject winPanel;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(!isActive)
+        if (!isActive)
         {
             if (sceneData)
                 SceneManager.LoadScene(sceneData.name);
@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (settingsPanel.activeInHierarchy)
-                settingsPanel.SetActive(false);
-            else settingsPanel.SetActive(true);
+            { settingsPanel.SetActive(false); Time.timeScale = 1; }
+            else { settingsPanel.SetActive(true); Time.timeScale = 0; }
         }
 
         if (stateManager.HP <= 0)

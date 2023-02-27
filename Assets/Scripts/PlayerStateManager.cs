@@ -60,6 +60,7 @@ public class PlayerStateManager : MonoBehaviour
             {
                 currentState = superState;
                 superState.EnterState(this, launchOffset, isLeft);
+                if (HP < 80) HP = 80;
             }
             else
             {
