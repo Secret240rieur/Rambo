@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
 
     public virtual void DamageSpawner()
     {
+        if(gameObject.activeSelf)
         if (--pointsLeft <= 0)
             gameObject.SetActive(false);
     }

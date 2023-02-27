@@ -17,7 +17,6 @@ public class ProjectileBehaviour : MonoBehaviour
             if (collision.GetComponent<ProxyEnemy>().Hp > 0)
             {
                 collision.GetComponent<ProxyEnemy>().Hp--;
-                collision.GetComponent<EnemySpawner>().DamageSpawner();
 
                 if (stateManager.IsSuper)
                     stateManager.Counter--;
@@ -26,6 +25,8 @@ public class ProjectileBehaviour : MonoBehaviour
 
                 gameObject.SetActive(false);
             }
+                collision.GetComponent<EnemySpawner>().DamageSpawner();
+            
         }
     }
 
