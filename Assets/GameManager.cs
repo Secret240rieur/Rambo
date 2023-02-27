@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool isActive = true; 
     [SerializeField] SceneData sceneData;
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject winPanel;
 
 
     [Inject]
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         settingsPanel.SetActive(false);
+        winPanel.SetActive(false);
 
     }
 
@@ -48,7 +50,8 @@ public class GameManager : MonoBehaviour
         {
             if (sceneData)
                 SceneManager.LoadScene(sceneData.name);
-            else Debug.Log("win");
+            else winPanel.SetActive(true);
+
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))

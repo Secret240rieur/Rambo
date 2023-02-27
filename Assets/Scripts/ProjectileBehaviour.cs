@@ -6,18 +6,9 @@ using Zenject;
 public class ProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] float speed = 0.5f;
-    [SerializeField] GameObject player;
 
     [Inject]
     PlayerStateManager stateManager;
-
-   
-
-    private void Awake()
-    {
-        player = GameObject.Find("player");
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
