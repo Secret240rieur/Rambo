@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6359619332954575159
 MonoBehaviour:
@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnerList:
   - {fileID: 0}
-  - {fileID: 0}
   isActive: 1
   sceneData: {fileID: 11400000, guid: ec8bd060a67b4094b8652ac096114422, type: 2}
-  settingsPanel: {fileID: 4368953837621805509, guid: fe85224135ec50842ba5af0be1102e16, type: 3}
+  settingsPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  losePanel: {fileID: 0}

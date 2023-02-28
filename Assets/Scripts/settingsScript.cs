@@ -18,10 +18,14 @@ public class settingsScript : MonoBehaviour
     public void HideSettings()
     {
 
-        //this.gameObject.SetActive(false);
 
         if (menuPanel)
             menuPanel.SetActive(true);
+        else
+        { 
+            this.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 
     public void TitleScreen ()

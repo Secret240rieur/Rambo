@@ -41475,6 +41475,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+--- !u!1 &3437054934504365130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9213014550140820060, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+  m_PrefabInstance: {fileID: 3437054934504365129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3758966433679239040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41654,21 +41659,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 3437054934504365130}
+    - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
       propertyPath: settingsPanel
       value: 
       objectReference: {fileID: 890090465}
     - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
-      propertyPath: enemySpawnerList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
       propertyPath: enemySpawnerList.Array.data[0]
       value: 
       objectReference: {fileID: 458698476}
-    - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
-      propertyPath: enemySpawnerList.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

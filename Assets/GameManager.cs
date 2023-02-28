@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SceneData sceneData;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject losePanel;
 
 
     [Inject]
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         settingsPanel.SetActive(false);
-
+        losePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
         if (stateManager.HP <= 0)
         {
             settingsPanel.SetActive(true);
+            losePanel.SetActive(true);
         }
 
     }

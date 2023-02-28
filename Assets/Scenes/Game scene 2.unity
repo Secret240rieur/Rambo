@@ -159,6 +159,7 @@ MonoBehaviour:
   sceneData: {fileID: 0}
   settingsPanel: {fileID: 445006344}
   winPanel: {fileID: 1576869813}
+  losePanel: {fileID: 3437054934504365130}
 --- !u!4 &15205615
 Transform:
   m_ObjectHideFlags: 0
@@ -42095,6 +42096,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9213014550140820060, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -42103,6 +42108,11 @@ PrefabInstance:
       addedObject: {fileID: 1576869814}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+--- !u!1 &3437054934504365130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9213014550140820060, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+  m_PrefabInstance: {fileID: 3437054934504365129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3758966433679239040
 PrefabInstance:
   m_ObjectHideFlags: 0
