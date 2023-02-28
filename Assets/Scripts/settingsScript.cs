@@ -6,22 +6,21 @@ using UnityEngine.SceneManagement;
 public class settingsScript : MonoBehaviour
 {
     //[SerializeField] GameObject settingsPanel;
-    GameObject menuPanel;
+    [SerializeField] GameObject menuPanel;
     [SerializeField] SceneData sceneData;
     [SerializeField] SceneData GameScene1;
 
 
     private void Awake()
     {
-        menuPanel = GameObject.Find("Menu_Panel");
     }
 
     public void HideSettings()
     {
 
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
 
-        if (menuPanel != null)
+        if (menuPanel)
             menuPanel.SetActive(true);
     }
 
@@ -35,6 +34,7 @@ public class settingsScript : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
+        Time.timeScale = 1;
     }
 
     public void NewGame()
