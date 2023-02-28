@@ -14,7 +14,6 @@ public class EnemyMove : MonoBehaviour
 
     private void Update()
     {
-       float distance = Vector2.Distance(transform.position, player.transform.position);
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
