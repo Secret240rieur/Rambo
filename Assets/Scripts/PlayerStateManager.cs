@@ -30,6 +30,12 @@ public class PlayerStateManager : MonoBehaviour
         if (collision.gameObject.tag == "Strong Enemy") HP -= 40;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("HP"))
+            HP += 5;
+    }
+
 
     // Start is called before the first frame update
     void Start()

@@ -7,6 +7,8 @@ public class ProxyEnemy : EnemySpawner
     EnemySpawner enemySpawner;
     [SerializeField] int countPoints=1;
     [SerializeField] int hp=5;
+    [SerializeField] GameObject collectablePrefab;
+    [SerializeField] float collectableSpawnChance = .1f;
 
     public int Hp { get => hp; set => hp = value; }
 
@@ -27,6 +29,18 @@ public class ProxyEnemy : EnemySpawner
                 enemySpawner.DamageSpawner();
             }
             gameObject.SetActive(false);
+           SpawnCollectable();
+        }
+    }
+
+
+    public void SpawnCollectable()
+    {
+        float randomNumber = Random.Range(0f, 1f);
+        if (randomNumber <= collectableSpawnChance)
+        {
+            GameObject collectable = Instantiate(collectablePrefab, transform.position, Quaternion.identity);
+            collectable.SetActive(true);
         }
     }
 }

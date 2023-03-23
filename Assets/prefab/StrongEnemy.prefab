@@ -165,6 +165,7 @@ MonoBehaviour:
   pointsLeft: 10
   countPoints: 1
   hp: 10
+  collectablePrefab: {fileID: 9165846739116042593, guid: 203bf8c1f5b7f43409a88a8071fdb4d3, type: 3}
 --- !u!114 &-7134652683251515718
 MonoBehaviour:
   m_ObjectHideFlags: 0
