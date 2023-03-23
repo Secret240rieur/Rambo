@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject losePanel;
+    [SerializeField] GameObject sliderHp;
 
 
     [Inject]
@@ -57,14 +58,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (settingsPanel.activeInHierarchy)
-            { settingsPanel.SetActive(false); Time.timeScale = 1; }
-            else { settingsPanel.SetActive(true); Time.timeScale = 0; }
+            { settingsPanel.SetActive(false); Time.timeScale = 1; sliderHp.SetActive(true); }
+            else { settingsPanel.SetActive(true); Time.timeScale = 0; sliderHp.SetActive(false); }
         }
 
         if (stateManager.HP <= 0)
         {
             settingsPanel.SetActive(true);
             losePanel.SetActive(true);
+            sliderHp.SetActive(false);
         }
 
     }

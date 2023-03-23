@@ -10,7 +10,8 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerNormalState normalState = new PlayerNormalState();
     public PlayerSuperState superState = new PlayerSuperState();
     [SerializeField] int hp = 100;
-
+    int hpMax = 100;
+   [SerializeField] SliderBehaviour hpSlider;
 
     Transform launchOffset;
     bool isLeft;
@@ -44,6 +45,8 @@ public class PlayerStateManager : MonoBehaviour
         launchOffset = GetComponent<PlayerControl>().LaunchOffset;
         isLeft = GetComponent<PlayerControl>().IsLeft;
         currentState.EnterState(this, launchOffset, isLeft);
+        hpSlider.SetHealth(HP, hpMax);
+
     }
 
     // Update is called once per frame
@@ -75,5 +78,8 @@ public class PlayerStateManager : MonoBehaviour
             }
             elapsedTime = 0f;
         }
+
+        hpSlider.SetHealth(HP, hpMax);
+
     }
 }

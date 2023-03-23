@@ -6,11 +6,13 @@ public class gameScript : MonoBehaviour
 {
 
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject hpSlider;
 
 
     private void Awake()
     {
         settingsPanel.SetActive(false);
+
 
     }
 
@@ -26,8 +28,15 @@ public class gameScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (settingsPanel.activeInHierarchy)
-             settingsPanel.SetActive(false);            
-            else settingsPanel.SetActive(true);
+            {
+                settingsPanel.SetActive(false);
+                hpSlider.SetActive(true);
+            }
+            else
+            {
+                settingsPanel.SetActive(true);
+                hpSlider.SetActive(false);
+            }
         }
     }
 }
