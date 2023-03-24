@@ -7975,6 +7975,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2561915163812221146, guid: 6dfd6300e4f80ab4ba06b959522f01ca, type: 3}
+      propertyPath: hpSlider
+      value: 
+      objectReference: {fileID: 2078588368}
     - target: {fileID: 8028553426383142089, guid: 6dfd6300e4f80ab4ba06b959522f01ca, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8022,6 +8026,10 @@ PrefabInstance:
     - target: {fileID: 8028553426383142103, guid: 6dfd6300e4f80ab4ba06b959522f01ca, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028553426383142103, guid: 6dfd6300e4f80ab4ba06b959522f01ca, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41393,6 +41401,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8028553426383142089, guid: 6dfd6300e4f80ab4ba06b959522f01ca, type: 3}
   m_PrefabInstance: {fileID: 1405365698}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2076011610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 736813551, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+  m_PrefabInstance: {fileID: 1359849009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2078588368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1282739197, guid: 42f056519e3d01943bb3a19033dd9fb4, type: 3}
+  m_PrefabInstance: {fileID: 1359849009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f440d302195d95428daf29cdaa8fcd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &696743317203151042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41650,6 +41674,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
+      propertyPath: sliderHp
+      value: 
+      objectReference: {fileID: 2076011610}
     - target: {fileID: 6359619332954575159, guid: 0b60858b820c976469471ff95c1fcf5d, type: 3}
       propertyPath: losePanel
       value: 

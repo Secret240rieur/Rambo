@@ -51,7 +51,11 @@ public class GameManager : MonoBehaviour
         {
             if (sceneData)
                 SceneManager.LoadScene(sceneData.name);
-            else winPanel.SetActive(true);
+            else
+            {
+                winPanel.SetActive(true);
+                sliderHp.SetActive(false);
+            }
 
         }
 
