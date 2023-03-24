@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -13,12 +15,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject sliderHp;
+    [SerializeField] int portionHp = 0;
 
 
     [Inject]
     PlayerStateManager stateManager;
 
     public static GameManager Instance { get; private set; }
+    public int PortionHp { get => portionHp; set => portionHp = value; }
+
+    BinaryFormatter binaryFormatter = new BinaryFormatter();
+
 
 
     // Start is called before the first frame update
@@ -27,7 +34,20 @@ public class GameManager : MonoBehaviour
         Instance = this;
         settingsPanel.SetActive(false);
         losePanel.SetActive(false);
+
+        LoadPortionData();
+
+
+
     }
+
+
+    private void Start()
+    {
+
+        
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -73,5 +93,53 @@ public class GameManager : MonoBehaviour
             sliderHp.SetActive(false);
         }
 
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            if (portionHp > 0 && !settingsPanel.activeInHierarchy&&!losePanel.activeInHierarchy)
+            {
+                stateManager.HP++;
+                portionHp--;
+                SavePortionData();
+            }
+        }
+
+
+
+    }
+
+
+    public void SavePortionData()
+    {
+        GameData gameData = new GameData();
+
+        gameData.HpPortion = PortionHp;
+
+
+        FileStream fileStream = new FileStream(Application.persistentDataPath + "/gameData.dat", FileMode.Create);
+
+        binaryFormatter.Serialize(fileStream, gameData);
+        fileStream.Close();
+    }
+
+
+    public void LoadPortionData()
+    {
+        GameData loadedGameData;
+
+        if (File.Exists(Application.persistentDataPath + "/gameData.dat"))
+        {
+            FileStream fileStream = new FileStream(Application.persistentDataPath + "/gameData.dat", FileMode.Open);
+            loadedGameData = (GameData)binaryFormatter.Deserialize(fileStream);
+            fileStream.Close();
+            portionHp = loadedGameData.HpPortion;
+            Debug.Log("Loaded score: " + loadedGameData.HpPortion);
+        }
+        else
+        {
+            Debug.Log("No saved game data found.");
+        }
     }
 }
+
+
+    

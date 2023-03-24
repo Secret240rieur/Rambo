@@ -161,6 +161,7 @@ MonoBehaviour:
   winPanel: {fileID: 1576869813}
   losePanel: {fileID: 3437054934504365130}
   sliderHp: {fileID: 736813551}
+  portionHp: 0
 --- !u!4 &15205615
 Transform:
   m_ObjectHideFlags: 0
