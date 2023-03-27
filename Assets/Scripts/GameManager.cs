@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject sliderHp;
     [SerializeField] int portionHp = 0;
+    [SerializeField] GameObject loginPage;
 
 
     [Inject]
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.F))
         {
-            if (portionHp > 0 && !settingsPanel.activeInHierarchy&&!losePanel.activeInHierarchy)
+            if (portionHp > 0 && !settingsPanel.activeInHierarchy && !losePanel.activeInHierarchy)
             {
                 stateManager.HP++;
                 portionHp--;
@@ -103,7 +104,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
+        if (loginPage != null)
+        {
+            if (loginPage.activeInHierarchy) Time.timeScale = 0;
+            else if (!loginPage.activeInHierarchy) Time.timeScale = 1;
+        }
 
     }
 

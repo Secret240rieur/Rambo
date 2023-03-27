@@ -13,7 +13,8 @@ public class LoginScript : MonoBehaviour
 
     [SerializeField] TMP_Text password;
     [SerializeField] TMP_Text email;
-
+    
+   
 
     public void SignUp()
     {
@@ -62,8 +63,8 @@ public class LoginScript : MonoBehaviour
             yield break;
         }
         Debug.Log(email.text);
-    } 
-    
+    }
+
     public IEnumerator LoginBack4app()
     {
         using var request = new UnityWebRequest("https://parseapi.back4app.com/login", "POST");
