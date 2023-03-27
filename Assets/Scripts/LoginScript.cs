@@ -17,8 +17,8 @@ public class LoginScript : MonoBehaviour
 
     public void SignUp()
     {
-        //StartCoroutine(SignUpBackend());
-        StartCoroutine(VerifyEmail());
+        StartCoroutine(SignUpBackend());
+        //StartCoroutine(VerifyEmail());
     }
 
 
@@ -39,7 +39,7 @@ public class LoginScript : MonoBehaviour
            StartCoroutine(LoginBack4app());
         }
         Debug.Log(request.downloadHandler.text);
-        StartCoroutine(VerifyEmail());
+        //StartCoroutine(VerifyEmail());
     }
 
 
@@ -66,7 +66,7 @@ public class LoginScript : MonoBehaviour
     
     public IEnumerator LoginBack4app()
     {
-        using var request = new UnityWebRequest("https://parseapi.back4app.com/login", "GET");
+        using var request = new UnityWebRequest("https://parseapi.back4app.com/login", "POST");
         request.SetRequestHeader("X-Parse-Application-Id", Back4app.ApplicationId);
         request.SetRequestHeader("X-Parse-REST-API-Key", Back4app.RestApiKey);
         request.SetRequestHeader("X-Parse-Revocable-Session", "1");

@@ -6703,8 +6703,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1109876126}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: GetValue
-        m_Mode: 1
+        m_MethodName: SetLanguage
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
