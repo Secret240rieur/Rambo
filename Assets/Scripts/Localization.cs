@@ -9,44 +9,54 @@ public class Localization : MonoBehaviour
 
 
 
-    static Dictionary<string, LanguageData> strings = new();
+    [SerializeField] static Dictionary<string, string> stringsCSVEN;
+    [SerializeField] static Dictionary<string, string> stringsCSVFR;
+
+    public static bool isInit;
+
 
     public static Localization Instance { get; private set; }
-    public static string CurrentLanguage { get; internal set; }
+    public static string CurrentLanguageCSV { get; internal set; }
+
 
     private void Awake()
     {
-        Instance = this;
-        filePath = Path.Combine(Application.streamingAssetsPath, "Strings.json");
-        string json = File.ReadAllText(filePath);
-
-        var data = JsonUtility.FromJson<StringsData>(json);
-
-
-        foreach (LanguageData languageData in data.strings)
-        {
-            strings.Add(languageData.key, languageData);
-        }
-
+        Instance = this;      
     }
 
-   
-
-    public static string GetString(string stringKey)
+   public static void Init()
     {
+        CSVLoader loader = new CSVLoader();
+        loader.LoadCSV();
 
-        if (strings.ContainsKey(stringKey))
+        stringsCSVEN = loader.GetDictionaryValues("en");
+        stringsCSVFR = loader.GetDictionaryValues("fr");
+        
+        isInit = true;
+    }
+
+    public static string GetStringCSV(string stringKey)
+    {
+        if (!isInit) Init();
+
+        string value = stringKey;
+
+        if (stringsCSVEN.ContainsKey(stringKey)||stringsCSVFR.ContainsKey(stringKey))
         {
-            switch (CurrentLanguage)
+            switch (CurrentLanguageCSV)
             {
                 case "en":
-                    return strings[stringKey].en;
-
+                    stringsCSVEN.TryGetValue(stringKey, out value);
+                    break;
                 case "fr":
-                    return strings[stringKey].fr;
+                    stringsCSVFR.TryGetValue(stringKey, out value);
+                    break;
+               
                 default:
-                    return strings[stringKey].en;
-            };
+                    stringsCSVEN.TryGetValue(stringKey, out value);
+                    break;
+            }
+            return value;
         }
         else
         {

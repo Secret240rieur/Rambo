@@ -84,5 +84,6 @@ public class LoginScript : MonoBehaviour
         }
         Debug.Log(request.downloadHandler.text);
         gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

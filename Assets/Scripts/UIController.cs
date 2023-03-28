@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings.Switch;
 
 public class UIController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class UIController : MonoBehaviour
     {
         if (!string.IsNullOrWhiteSpace(language))
         {
-            Localization.CurrentLanguage = language;
+            Localization.CurrentLanguageCSV = language;
             FindObjectsOfType<TextLocalizer>().ToList().ForEach(x => x.Localize());
         }
     }

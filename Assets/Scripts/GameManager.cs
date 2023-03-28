@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         if (loginPage != null)
         {
             if (loginPage.activeInHierarchy) Time.timeScale = 0;
-            else if (!loginPage.activeInHierarchy) Time.timeScale = 1;
+            
         }
 
     }

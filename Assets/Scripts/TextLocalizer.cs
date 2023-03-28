@@ -11,7 +11,7 @@ public class TextLocalizer : MonoBehaviour
 
     public void Localize()
     {
-        GetComponent<TMP_Text>().text = Localization.GetString(key);
+        GetComponent<TMP_Text>().text = Localization.GetStringCSV(key);
     }
 
 
