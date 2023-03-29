@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -15,7 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject losePanel;
     [SerializeField] GameObject sliderHp;
-    [SerializeField] int portionHp = 0;
+    [SerializeField] GameObject TextHp;
+    [SerializeField] int potionHp = 0;
+    [SerializeField] TMP_Text HpText;
     [SerializeField] GameObject loginPage;
 
 
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour
     PlayerStateManager stateManager;
 
     public static GameManager Instance { get; private set; }
-    public int PortionHp { get => portionHp; set => portionHp = value; }
+    public int PotionHp { get => potionHp; set => potionHp = value; }
 
     BinaryFormatter binaryFormatter = new BinaryFormatter();
 
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
         settingsPanel.SetActive(false);
         losePanel.SetActive(false);
 
-        LoadPortionData();
+        LoadData();
 
 
 
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
             {
                 winPanel.SetActive(true);
                 sliderHp.SetActive(false);
+                TextHp.SetActive(false);
             }
 
         }
@@ -83,8 +87,18 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (settingsPanel.activeInHierarchy)
-            { settingsPanel.SetActive(false); Time.timeScale = 1; sliderHp.SetActive(true); }
-            else { settingsPanel.SetActive(true); Time.timeScale = 0; sliderHp.SetActive(false); }
+            { 
+                settingsPanel.SetActive(false);
+                Time.timeScale = 1; 
+                sliderHp.SetActive(true);
+                TextHp.SetActive(true);
+            }
+            else { 
+                settingsPanel.SetActive(true);
+                Time.timeScale = 0;
+                sliderHp.SetActive(false);
+                TextHp.SetActive(false);
+            }
         }
 
         if (stateManager.HP <= 0)
@@ -92,15 +106,16 @@ public class GameManager : MonoBehaviour
             settingsPanel.SetActive(true);
             losePanel.SetActive(true);
             sliderHp.SetActive(false);
+            TextHp.SetActive(false);
         }
 
         if (Input.GetKeyUp(KeyCode.F))
         {
-            if (portionHp > 0 && !settingsPanel.activeInHierarchy && !losePanel.activeInHierarchy)
+            if (potionHp > 0 && !settingsPanel.activeInHierarchy && !losePanel.activeInHierarchy)
             {
                 stateManager.HP++;
-                portionHp--;
-                SavePortionData();
+                potionHp--;
+                SaveData();
             }
         }
 
@@ -110,14 +125,16 @@ public class GameManager : MonoBehaviour
             
         }
 
+        HpText.text=PotionHp.ToString();
+
     }
 
 
-    public void SavePortionData()
+    public void SaveData()
     {
         GameData gameData = new GameData();
 
-        gameData.HpPortion = PortionHp;
+        gameData.HpPotion = PotionHp;
 
 
         FileStream fileStream = new FileStream(Application.persistentDataPath + "/gameData.dat", FileMode.Create);
@@ -127,7 +144,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void LoadPortionData()
+    public void LoadData()
     {
         GameData loadedGameData;
 
@@ -136,8 +153,8 @@ public class GameManager : MonoBehaviour
             FileStream fileStream = new FileStream(Application.persistentDataPath + "/gameData.dat", FileMode.Open);
             loadedGameData = (GameData)binaryFormatter.Deserialize(fileStream);
             fileStream.Close();
-            portionHp = loadedGameData.HpPortion;
-            Debug.Log("Loaded score: " + loadedGameData.HpPortion);
+            potionHp = loadedGameData.HpPotion;
+            Debug.Log("Loaded score: " + loadedGameData.HpPotion);
         }
         else
         {

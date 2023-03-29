@@ -11,6 +11,10 @@ public class Localization : MonoBehaviour
 
     [SerializeField] static Dictionary<string, string> stringsCSVEN;
     [SerializeField] static Dictionary<string, string> stringsCSVFR;
+    [SerializeField] static Dictionary<string, string> stringsCSVDE;
+    [SerializeField] static Dictionary<string, string> stringsCSVRU;
+    [SerializeField] static Dictionary<string, string> stringsCSVCH;
+    [SerializeField] static Dictionary<string, string> stringsCSVe;
 
     public static bool isInit;
 
@@ -31,6 +35,10 @@ public class Localization : MonoBehaviour
 
         stringsCSVEN = loader.GetDictionaryValues("en");
         stringsCSVFR = loader.GetDictionaryValues("fr");
+        stringsCSVDE = loader.GetDictionaryValues("de");
+        stringsCSVRU = loader.GetDictionaryValues("ru");
+        stringsCSVCH = loader.GetDictionaryValues("es");
+        stringsCSVe = loader.GetDictionaryValues("E");
         
         isInit = true;
     }
@@ -41,7 +49,8 @@ public class Localization : MonoBehaviour
 
         string value = stringKey;
 
-        if (stringsCSVEN.ContainsKey(stringKey)||stringsCSVFR.ContainsKey(stringKey))
+        if (stringsCSVEN.ContainsKey(stringKey)||stringsCSVFR.ContainsKey(stringKey)||
+            stringsCSVDE.ContainsKey(stringKey)|| stringsCSVRU.ContainsKey(stringKey)|| stringsCSVCH.ContainsKey(stringKey))
         {
             switch (CurrentLanguageCSV)
             {
@@ -51,7 +60,16 @@ public class Localization : MonoBehaviour
                 case "fr":
                     stringsCSVFR.TryGetValue(stringKey, out value);
                     break;
-               
+                case "de":
+                    stringsCSVDE.TryGetValue(stringKey, out value);
+                    break;
+                case "ru":
+                    stringsCSVRU.TryGetValue(stringKey, out value);
+                    break;
+                case "es":
+                    stringsCSVCH.TryGetValue(stringKey, out value);
+                    break;
+
                 default:
                     stringsCSVEN.TryGetValue(stringKey, out value);
                     break;

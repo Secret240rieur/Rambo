@@ -16,6 +16,10 @@ public class UIController : MonoBehaviour
     {
         if(val==0) language = "en";
         if(val==1) language = "fr";
+        if(val==2) language = "de";
+        if(val==3) language = "ru";
+        if(val==4) language = "es";
+        Debug.Log(language);
     }
 
     // Update is called once per frame

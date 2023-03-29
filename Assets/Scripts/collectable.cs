@@ -12,9 +12,9 @@ public class collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.PortionHp++;
+            GameManager.Instance.PotionHp++;
 
-            GameManager.Instance.SavePortionData();
+            GameManager.Instance.SaveData();
             Destroy(gameObject);
         }
     }
