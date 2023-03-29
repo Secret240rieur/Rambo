@@ -21,13 +21,15 @@ public class LoginScript : MonoBehaviour
     {
         if (message == "{\"code\":125,\"error\":\"Email address format is invalid.\"}")
             emailError.text = "Email address format is invalid.";
-        else if (message == "HTTP/1.1 404 Not Found")
-            emailError.text = "Wrong password";
-        else if (message == "{\"code\":202,\"error\":\"Account already exists for this username.\"}")
+       else if (message == "{\"code\":202,\"error\":\"Account already exists for this username.\"}")
             emailError.text = "Account already exists for this username.";
     }
 
-
+    void PassError(string message)
+    {
+         if (message == "HTTP/1.1 404 Not Found")
+            passError.text = "Wrong password";
+    }
 
     public void SignUp()
     {
@@ -36,7 +38,6 @@ public class LoginScript : MonoBehaviour
         if (email.text.Length == 1)
             emailError.text = "You must enter an email";
         else StartCoroutine(SignUpBackend());
-
     }
 
     public void Login()
@@ -46,7 +47,6 @@ public class LoginScript : MonoBehaviour
         if (email.text.Length == 1)
             emailError.text = "You must enter an email";
         else StartCoroutine(LoginBackend());
-
     }
 
 
@@ -66,9 +66,7 @@ public class LoginScript : MonoBehaviour
         {
             Debug.LogError(request.error);
         }
-        Debug.Log(request.downloadHandler.text);
         EmailError(request.downloadHandler.text);
-        //StartCoroutine(VerifyEmail());
     }
 
 
@@ -88,7 +86,6 @@ public class LoginScript : MonoBehaviour
             Debug.LogError(request.error);
             yield break;
         }
-        Debug.Log(email.text);
     }
 
     public IEnumerator LoginBackend()
@@ -107,9 +104,9 @@ public class LoginScript : MonoBehaviour
         {
             Debug.LogError(request.error);
             EmailError(request.error);
+            PassError(request.error);
             yield break;
         }
-        Debug.Log(request.downloadHandler.text);
         EmailError(request.downloadHandler.text);
         gameObject.SetActive(false);
         Time.timeScale = 1;
