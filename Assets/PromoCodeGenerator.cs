@@ -8,8 +8,7 @@ using Newtonsoft.Json;
 
 public class PromoCodeGenerator : MonoBehaviour
 {
-    public int numberOfCodesToGenerate = 10;
-    //public Text statusText;
+    public int numberOfCodesToGenerate = 100;
 
     public void GeneratePromoCodes()
     {
