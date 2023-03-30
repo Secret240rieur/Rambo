@@ -52,7 +52,7 @@ public class LoginScript : MonoBehaviour
 
     public IEnumerator SignUpBackend()
     {
-        using var request = new UnityWebRequest("https://parseapi.back4app.com/users", "POST");
+        using UnityWebRequest request = new ("https://parseapi.back4app.com/users", "POST");
         request.SetRequestHeader("X-Parse-Application-Id", Back4app.ApplicationId);
         request.SetRequestHeader("X-Parse-REST-API-Key", Back4app.RestApiKey);
         request.SetRequestHeader("X-Parse-Revocable-Session", "1");
@@ -72,7 +72,7 @@ public class LoginScript : MonoBehaviour
 
     public IEnumerator VerifyEmail()
     {
-        using var request = new UnityWebRequest("https://parseapi.back4app.com/verificationEmailRequest", "POST");
+        using UnityWebRequest request = new ("https://parseapi.back4app.com/verificationEmailRequest", "POST");
         request.SetRequestHeader("X-Parse-Application-Id", Back4app.ApplicationId);
         request.SetRequestHeader("X-Parse-REST-API-Key", Back4app.RestApiKey);
         request.SetRequestHeader("Content-Type", "application/json");
@@ -90,7 +90,7 @@ public class LoginScript : MonoBehaviour
 
     public IEnumerator LoginBackend()
     {
-        using var request = new UnityWebRequest("https://parseapi.back4app.com/login", "POST");
+        using UnityWebRequest request = new ("https://parseapi.back4app.com/login", "POST");
         request.SetRequestHeader("X-Parse-Application-Id", Back4app.ApplicationId);
         request.SetRequestHeader("X-Parse-REST-API-Key", Back4app.RestApiKey);
         request.SetRequestHeader("X-Parse-Revocable-Session", "1");
